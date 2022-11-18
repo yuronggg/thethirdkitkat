@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T3B4VHH89R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-T3B4VHH89R');
+    </script>
+
+    <title>Halloween Griffles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-assets>
+            <img id="Griffles" src="Griffles.png"></a-asset-item>
+            <a-asset-item id="beak_top" src="beak_top.gltf"></a-asset-item>
+            <a-asset-item id="beak_bottom" src="beak_bottom.gltf"></a-asset-item>
+            <a-asset-item id="horns" src="horns.gltf"></a-asset-item>
+            <a-asset-item id="tail" src="tail.gltf"></a-asset-item>
+        </a-assets>
+        <a-camera active="false" position="0 0 0" look-controls-enabled="false"></a-camera>
+        <a-entity mindar-face-target="anchorIndex: 1">
+	        <a-image src="#Griffles" position="0.17 -0.2 0.1" scale="2.7 2.7 2.7"></a-image>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 11">
+	        <a-gltf-model src="#beak_top" position="-0.2 0.30 0.15" scale="0.3 0.2 0.1" rotation="-30 -30 0"  visible="true"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 14">
+	        <a-gltf-model src="#beak_bottom" position="-0.2 0.30 0.15" scale="0.3 0.2 0.1" rotation="-30 -30 0"  visible="true"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 151">
+	        <a-gltf-model src="#horns" position="-0.05 0.4 0.3" scale="0.03 0.03 0.03" rotation="0 0 0"  visible="true"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 1">
+	        <a-gltf-model src="#tail" position="0.4 -0.3 -0.5" scale="2 2 2" rotation="0 0 0"  visible="true"></a-gltf-model>
+        </a-entity>
+    </a-scene>
+  </body>
+</html>
